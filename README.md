@@ -1,4 +1,4 @@
-# Apache Kafka Producer/Consumer example in JavaScript (Node.js)
+# Apache Kafka Producer/Consumer example for (Node.js)
 
 ## Getting started
 
