@@ -7,7 +7,8 @@ const kafkaConf = {
   "security.protocol": "SASL_SSL",
   "sasl.mechanisms": "SCRAM-SHA-256",
   "sasl.username": process.env.CLOUDKARAFKA_USERNAME,
-  "sasl.password": process.env.CLOUDKARAFKA_PASSWORD
+  "sasl.password": process.env.CLOUDKARAFKA_PASSWORD,
+  "debug": "generic,broker,security"
 };
 
 const prefix = process.env.CLOUDKARAFKA_TOPIC_PREFIX;
@@ -27,5 +28,13 @@ producer.on("ready", function(arg) {
 
 producer.on("disconnected", function(arg) {
   process.exit();
+});
+
+producer.on('event.error', function(err) {
+  console.error(err);
+  process.exit(1);
+});
+producer.on('event.log', function(log) {
+  console.log(log);
 });
 producer.connect();
