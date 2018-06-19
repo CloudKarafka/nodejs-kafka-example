@@ -12,21 +12,24 @@ Configuration
   Username can be found in the Details view in for your CloudKarafka instance.
 * `export CLOUDKARAFKA_PASSWORD="password"`
   Password can be found in the Details view in for your CloudKarafka instance.
-* `export CLOUDKARAFKA_TOPIC_PREFIX="<username>-"`
+* `export CLOUDKARAFKA_TOPIC="topic"`
   Topic prefix should be the same as your username.
 
-These export commands must be run in both of the terminal windows below.
+These exports must be run in both of the terminal windows below, or create a `.env` file according to the example then follow the commands.
 
 ```
 git clone https://github.com/CloudKarafka/nodejs-kafka-example.git
 cd nodejs-kafka-example
 npm install
+cp .env.example .env
+# now add your own credentials from the dashboard to the `.env` file
+. ./.env
 node consumer.js
 ```
 
 Open another terminal window
 ```
-# setup ENV variables for the new terminal window (from above)
 cd nodejs-kafka-example
-node consumer.js
+. ./.env
+node producer.js
 ```
