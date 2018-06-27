@@ -12,8 +12,8 @@ Configuration
   Username can be found in the Details view in for your CloudKarafka instance.
 * `export CLOUDKARAFKA_PASSWORD="password"`
   Password can be found in the Details view in for your CloudKarafka instance.
-* `export CLOUDKARAFKA_TOPIC="topic"`
-  Topic prefix should be the same as your username.
+* `export CLOUDKARAFKA_TOPIC="default"`
+  Topic name without the "prefix-" that is your username.
 
 These exports must be run in both of the terminal windows below, or create a `.env` file according to the example then follow the commands.
 
