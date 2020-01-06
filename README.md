@@ -28,5 +28,5 @@ Open another terminal window
 ```
 # setup ENV variables for the new terminal window (from above)
 cd nodejs-kafka-example
-node consumer.js
+node producer.js
 ```
